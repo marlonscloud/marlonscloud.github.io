@@ -1,7 +1,10 @@
 {
-    "title": "Clean Blog Jekyll",
-    "name": "startbootstrap-clean-blog-jekyll",
-    "version": "4.0.10",
+    "title": "Clean Blog",
+    "name": "startbootstrap-clean-blog",
+    "version": "5.0.9",
+    "scripts": {
+        "start": "node_modules/.bin/gulp watch"
+    },
     "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
     "keywords": [
         "css",
@@ -11,9 +14,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/themes/clean-blog-jekyll",
+    "homepage": "https://startbootstrap.com/themes/clean-blog",
     "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/issues",
+        "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -23,16 +26,24 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll.git"
+        "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog.git"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "5.13.0",
         "bootstrap": "4.5.0",
-        "font-awesome": "4.7.0",
-        "jquery": "3.5.1",
-        "startbootstrap-clean-blog": "5.0.9"
+        "jquery": "3.5.1"
     },
     "devDependencies": {
         "browser-sync": "2.26.7",
-        "gulp": "4.0.2"
+        "del": "5.1.0",
+        "gulp": "4.0.2",
+        "gulp-autoprefixer": "7.0.1",
+        "gulp-clean-css": "4.3.0",
+        "gulp-header": "2.0.9",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "2.0.0",
+        "gulp-sass": "4.1.0",
+        "gulp-uglify": "3.0.2",
+        "merge-stream": "2.0.0"
     }
 }
