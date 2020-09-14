@@ -207,9 +207,22 @@ header.masthead .site-heading {
   text-align: center;
 }
 
+@media only screen and (max-width: 568px) {
+  header.masthead .page-heading h1,
+  header.masthead .site-heading h1 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (min-width: 569px) {
+  header.masthead .page-heading h1,
+  header.masthead .site-heading h1 {
+    font-size: 50px;
+  }
+}
+
 header.masthead .page-heading h1,
 header.masthead .site-heading h1 {
-  font-size: 50px;
   margin-top: 0;
 }
 
@@ -411,4 +424,8 @@ footer .copyright {
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
+}
+
+.home-page-header {
+  margin-left: -25px;
 }
