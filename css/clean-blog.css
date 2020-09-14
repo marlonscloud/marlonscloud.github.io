@@ -208,6 +208,10 @@ header.masthead .site-heading {
 }
 
 @media only screen and (max-width: 568px) {
+  header.masthead .page-heading,
+  header.masthead .site-heading {
+    margin-right: -7px;
+  }
   header.masthead .page-heading h1,
   header.masthead .site-heading h1 {
     font-size: 38px;
