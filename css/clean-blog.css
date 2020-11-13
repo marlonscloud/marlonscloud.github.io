@@ -437,3 +437,12 @@ footer .copyright {
 .home-page-header {
   margin-left: -25px;
 }
+
+.mobile-profile-img {
+  display: block;
+  max-width: 200px;
+  max-height: 200px;
+  border: 6.5px solid rgba(102, 178, 255, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+}
