@@ -332,6 +332,10 @@ header.masthead .post-heading .meta a {
   text-decoration: underline;
 }
 
+.email-link--black {
+  text-decoration: underline;
+}
+
 .floating-label-form-group {
   font-size: 14px;
   position: relative;
