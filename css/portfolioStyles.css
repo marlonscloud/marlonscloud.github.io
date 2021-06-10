@@ -63,6 +63,14 @@ body {
   outline: 0 !important;
 }
 
+.small-font{
+  font-size: 0.5em;
+  font-size: 0.5em;
+    position: relative;
+    bottom: 8px;
+    right: 5px;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -436,6 +444,7 @@ mark,
 .list-inline {
   padding-left: 0;
   list-style: none;
+  margin-left: 3px;
 }
 
 .list-inline-item {
@@ -7577,6 +7586,10 @@ button.bg-dark:focus {
   margin-bottom: 1rem !important;
 }
 
+.my-3--no-margin-bottom{
+  margin-bottom: 0 !important;
+}
+
 .ml-3,
 .mx-3 {
   margin-left: 1rem !important;
@@ -10024,6 +10037,7 @@ p.lead {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.5rem;
+  color: black;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
