@@ -496,6 +496,14 @@ mark,
   line-height: 1;
 }
 
+.awards-img{
+  display: block;
+    max-width: 65em;
+    max-height: 65em;
+    width: auto;
+    height: auto;
+}
+
 .figure-caption {
   font-size: 90%;
   color: #6c757d;
