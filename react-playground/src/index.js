@@ -1,16 +1,41 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-function Button() {
-  var [counter, setCounter] = useState(5);
-  return <button onClick={() => setCounter(counter * 2)}> {counter}</button >;
+function Button(props) {
+  return (
+    <button onClick={() => props.increment(props.incrementAmount)}>
+      +{props.incrementAmount}
+    </button >
+  );
+}
+
+function Display(props) {
+  return (
+    <div>
+      {props.message}
+    </div>
+  );
+}
+
+function AppTwo() {
+  var [counter, setCounter] = useState(0);
+  var incrementCounter = (amount) => setCounter(counter + amount);
+  return (
+    <>
+      <Button increment={incrementCounter} incrementAmount={5} />
+      <Button increment={incrementCounter} incrementAmount={10} />
+      <Button increment={incrementCounter} incrementAmount={100} />
+      <Button increment={incrementCounter} incrementAmount={1} />
+      <Display message={counter} />
+    </>
+  );
 }
 
 ReactDOM.render(
-  <Button />,
+  <AppTwo />,
   document.getElementById('root')
 );
 
