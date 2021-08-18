@@ -4,9 +4,9 @@ function bravo () {
     "use strict"
   
     // type 'bravo' on your keyboard
-    let key = [66,82,65,86,79]
-    let ck = 0
-    let max = key.length
+    let key = [66,82,65,86,79];
+    let ck = 0;
+    let max = key.length;
   
     let bravo = function () {
   
