@@ -34,10 +34,16 @@ function AppTwo() {
   );
 }
 
-ReactDOM.render(
-  <AppTwo />,
-  document.getElementById('root')
-);
+const Render = () => {
+
+  ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+  );
+
+}
+
+setInterval(Render, 1000);
 
 // ReactDOM.render(
 //   <React.StrictMode>
