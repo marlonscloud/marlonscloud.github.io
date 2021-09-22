@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 const Render = () => {
 
   ReactDOM.render(
-    <App title="Test me passed" />,
+    <App title="Github users - card components" />,
     document.getElementById('root')
   );
 
