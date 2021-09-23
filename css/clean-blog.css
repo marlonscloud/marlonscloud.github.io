@@ -442,6 +442,18 @@ footer .copyright {
   margin-left: -25px;
 }
 
+.post-preview:not(:first-child) {
+  margin-top: 3em;
+}
+
+.masthead {
+  max-height: 26em;
+}
+
+.blog-img {
+  max-width: 100%;
+}
+
 .mobile-profile-img {
   display: block;
   max-width: 200px;
