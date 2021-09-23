@@ -454,6 +454,10 @@ footer .copyright {
   max-width: 100%;
 }
 
+.link-highlight {
+  color: #007bff;
+}
+
 .mobile-profile-img {
   display: block;
   max-width: 200px;
