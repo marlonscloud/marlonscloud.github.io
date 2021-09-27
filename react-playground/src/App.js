@@ -3,25 +3,24 @@ import './App.css';
 import React, { Profiler } from 'react';
 import { event } from 'jquery';
 
-const testData = [
-  { name: "Dan Abramov", avatar_url: "https://avatars0.githubusercontent.com/u/810438?v=4", company: "@facebook" },
-  { name: "Sophie Alpert", avatar_url: "https://avatars2.githubusercontent.com/u/6820?v=4", company: "Humu" },
-  { name: "Sebastian Markbåge", avatar_url: "https://avatars2.githubusercontent.com/u/63648?v=4", company: "Facebook" },
-];
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profiles: testData,
+      profiles: [],
     }
   }
+  addNewProfile = (profileData) => {
+    this.setState(prevState => ({
+      profiles: [...prevState.profiles, profileData]
+    }))
+  };
 
   render() {
     return (
       <div>
         <h1>{this.props.title}</h1>
-        <Form />
+        <Form onSubmit={this.addNewProfile} />
         <CardList profiles={this.state.profiles} />
       </div>
     );
@@ -34,14 +33,16 @@ const CardList = (props) => (
   </div>
 );
 
+const axios = require('axios');
+
 class Form extends React.Component {
 
   state = { userName: '' };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    axios.get(`https://api.github.com/users/${this.state.userName}`);
-    console.log(this.state.userName);
+    const response = await axios.get(`https://api.github.com/users/${this.state.userName}`);
+    this.props.onSubmit(response.data);
   }
 
   render() {

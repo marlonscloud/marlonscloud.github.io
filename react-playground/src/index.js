@@ -15,6 +15,7 @@ const Render = () => {
 
 setInterval(Render, 1000);
 
+
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
