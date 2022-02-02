@@ -33,6 +33,23 @@
     color: #007bff;
 }
 
+.bjj-table{
+    text-align: center;
+    font-size: 0.85em;
+
+    td{
+        vertical-align: middle;
+    }
+}
+
+.win{
+    background: #bfd;
+}
+
+.loss{
+    background: #FFE3E3;
+}
+
 .mobile-profile-img {
     display: block;
     max-width: 200px;
