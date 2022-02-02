@@ -469,6 +469,7 @@ footer .copyright {
 
 .bjj-table td {
   vertical-align: middle;
+  border: 1px solid #727b8a !important;
 }
 
 .win {
