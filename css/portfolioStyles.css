@@ -82,6 +82,23 @@ body {
   margin-left: 2em;
 }
 
+@media (max-width: 576px) {
+  .reviews{
+    display: block;
+  }
+
+  .reviews img{
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+
+  .reviews h3{
+    text-align: center;
+  }
+}
+
 .small-font{
   font-size: 0.5em;
   font-size: 0.5em;
