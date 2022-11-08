@@ -63,6 +63,25 @@ body {
   outline: 0 !important;
 }
 
+.reviews{
+  display: flex;
+}
+
+.reviews img{
+  border-radius: 50%;
+  width: 78px;
+  height: 78px;
+}
+
+.reviews h3{
+  margin-left: 0.5em;
+  min-width: 100px;
+}
+
+.reviews p{
+  margin-left: 2em;
+}
+
 .small-font{
   font-size: 0.5em;
   font-size: 0.5em;
