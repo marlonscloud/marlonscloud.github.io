@@ -97,6 +97,10 @@ body {
   .reviews h3{
     text-align: center;
   }
+
+  .reviews p{
+    margin: 10px;
+  }
 }
 
 .small-font{
