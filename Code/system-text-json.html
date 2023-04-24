@@ -15,10 +15,16 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Key Personal Development Resources">
+  <meta name="author" content="Marlon Dedakis">
 
-  <title>Marlonscloud - Marlon Dedakis' Blog</title>
+  <meta property="og:title" content="The Personal Development Blueprint">
+  <meta property="og:description" content="Key Personal Development Resources">
+  <meta property="og:image"
+    content="https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/milky-way-over-mount-rainier-ed-leckert.jpg" />
+  <meta property="og:url" content="https://www.marlonscloud.com/key-resources.html">
+
+  <title>Marlonscloud - Key Resources</title>
 
   <!--Tab icon-->
   <link rel="icon" href="../img/favicon.ico">
@@ -71,14 +77,13 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/code.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Blog posts</h1>
-            <h2 class="subheading"></h2>
+            <h1>System.Text.Json vs Newtonsoft.Json</h1>
           </div>
         </div>
       </div>
@@ -89,52 +94,25 @@
   <!-- Main Content -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-8 col-md-10 mx-auto the-blueprint">
+        <p>Both System.Text.Json and Newtonsoft.Json are libraries for working with JSON data in .NET applications. Newtonsoft.Json has been a popular choice for handling JSON serialization and deserialization in .NET for many years, while System.Text.Json is a newer library that was introduced with .NET Core 3.0 and is now included in .NET 5 and later.</p>
 
-        <div class="post-preview">
-          <a href="the-blueprint.html">
-            <h2 class="post-title">
-              The Personal Development Blueprint
-            </h2>
-            <h3 class="post-subtitle">
-              A thorough guide for navigating personal development with key resources
-            </h3>
-          </a>
-          <p class="post-meta">Posted by Marlon Dedakis</p>
-        </div>
+<p>Here are some differences between the two libraries:</p>
 
-        <div class="post-preview">
-          <a href="key-resources.html">
-            <h2 class="post-title">
-              Key Resources for Personal Development
-            </h2>
-            <h3 class="post-subtitle">
-              Just the resources
-            </h3>
-          </a>
-          <p class="post-meta">Posted by Marlon Dedakis</p>
-        </div>
+<p>Performance: System.Text.Json is generally faster than Newtonsoft.Json, especially for large data sets. This is because System.Text.Json uses a more efficient memory allocation strategy and optimized code paths for common scenarios.</p>
 
-        <div class="post-preview">
-          <a href="bjj-record.html">
-            <h2 class="post-title">
-              Brazilian jiu-jitsu competition record
-            </h2>
-            <!-- <h3 class="post-subtitle">
-              A thorough guide for navigating personal development with key resources
-            </h3> -->
-          </a>
-          <p class="post-meta">Posted by Marlon Dedakis</p>
-        </div>
+<p>Ease of use: Newtonsoft.Json has a simpler and more flexible API compared to System.Text.Json. It provides many options for controlling serialization and deserialization behavior, and has a more intuitive error handling mechanism. System.Text.Json, on the other hand, has a more limited API with fewer options, but is easier to use for common scenarios.</p>
 
+<p>Compatibility: Newtonsoft.Json has been widely used in .NET applications for many years and is compatible with a wide range of .NET versions and platforms. System.Text.Json is a relatively new library and is only compatible with .NET Core 3.0 and later versions, although it is now included in .NET 5 and later.</p>
 
-        <!-- Pager -->
-        <!-- <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div> -->
+<p>Features: Newtonsoft.Json provides a wide range of features for working with JSON data, including support for custom converters, LINQ to JSON, and JSON schema validation. System.Text.Json provides some of these features as well, but has a more limited set of options compared to Newtonsoft.Json.</p>
+
+<p>Overall, both libraries are good choices for working with JSON data in .NET applications, and the choice between them will depend on the specific requirements of your project. If performance is a major concern, System.Text.Json is likely to be the better choice, while Newtonsoft.Json may be more suitable if you require a more flexible API or need to support older versions of .NET.</p>
       </div>
     </div>
   </div>
+
+
   <hr>
 
   <!-- Footer -->
