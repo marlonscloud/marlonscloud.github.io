@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L6HN5BFCS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9L6HN5BFCS');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Key Personal Development Resources">
+  <meta name="author" content="Marlon Dedakis">
+
+  <meta property="og:title" content="The Personal Development Blueprint">
+  <meta property="og:description" content="Key Personal Development Resources">
+  <meta property="og:image" content="https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/milky-way-over-mount-rainier-ed-leckert.jpg" />
+  <meta property="og:url" content="https://www.marlonscloud.com/key-resources.html">
+
+  <title>Marlonscloud - Key Resources</title>
+
+  <!--Tab icon-->
+  <link rel="icon" href="../img/favicon.ico">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="../css/clean-blog.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">marlonscloud</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../cv.html" target="blank">CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/milky-way-1023340_1920.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Resetting an Umbraco Backoffice Password at the Database Level</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto the-blueprint">
+        <p>Are you locked out of your Umbraco account?</p>
+
+        <p>If you're running an Umbraco site locally, or are using a test email address, you won't be able to reset your password using the "forgot password" function, which means your only option to reset the password is to update the database directly.</p>
+
+        <p>Fortunately, this is a simple task, let's go through it.</p>
+
+        <p><strong>STEP 1:</strong> Open SSMS, navigate to your database and find the <code>umbracoUser</code> table, right click and select the top 1000 rows. Then find the userId of the email login you are attempting to login with.</p>
+
+        <p><strong>STEP 2:</strong> Go to <a href="https://dotnetfiddle.net" target="_blank">dotnetfiddle.net</a> in your web browser and run the following code, changing "YourNewPassword" to the new password you want to set. This will create a password hash, which we then want to save in the database for your user.</p>
+
+        <pre><code>using System;
+using Microsoft.AspNetCore.Identity;
+
+namespace GenerateHash
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var password = "YourNewPassword"; // Replace with your new password
+            var passwordHasher = new PasswordHasher&lt;object&gt;();
+            var hashedPassword = passwordHasher.HashPassword(null, password);
+            Console.WriteLine(hashedPassword);
+        }
+    }
+}</code></pre>
+
+        <p><strong>STEP 3:</strong> Back in SSMS, write an UPDATE statement to set your new password. While you're here, set <code>lastLockoutDate</code> to <code>NULL</code>, and <code>userNoConsole</code> and <code>failedLoginAttempts</code> to zero, to ensure you're not locked out of your account.</p>
+
+        <p>(Copy and paste the hash you generated earlier into the <code>userPassword</code> field)</p>
+
+        <pre><code>UPDATE [yourdatabasename].[dbo].[umbracoUser]
+SET userPassword = 'yourHash', 
+    userNoConsole = 0, 
+    failedLoginAttempts = 0
+WHERE id = -1</code></pre>
+
+        <p>Click Execute or press F5.</p>
+
+        <p>That's it! You can now login to the Umbraco Backoffice using your new password.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://github.com/marlonscloud" target="blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted"><i class="fas fa-ghost"></i> &nbsp; marlonscloud 2025</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../js/clean-blog.min.js"></script>
+</body>
+</html>
