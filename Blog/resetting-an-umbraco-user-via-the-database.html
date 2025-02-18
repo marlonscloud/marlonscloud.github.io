@@ -111,7 +111,7 @@ namespace GenerateHash
 
         <p><strong>STEP 3:</strong> Back in SSMS, write an UPDATE statement to set your new password. While you're here, set <code>lastLockoutDate</code> to <code>NULL</code>, and <code>userNoConsole</code> and <code>failedLoginAttempts</code> to zero, to ensure you're not locked out of your account.</p>
 
-        <p>(Copy and paste the hash you generated earlier into the <code>userPassword</code> field)</p>
+        <p>(Copy and paste the hash you generated earlier into the <code>userPassword</code> field and update the id to the id of the user whose password you want to reset from step 1)</p>
 
         <pre><code>UPDATE [yourdatabasename].[dbo].[umbracoUser]
 SET userPassword = 'yourHash', 
